@@ -1,28 +1,26 @@
-# ![HAProxy](https://github.com/haproxytech/kubernetes-ingress/raw/master/assets/images/haproxy-weblogo-210x49.png "HAProxy")
+# Go linter for projects
 
-## HAProxy Github Actions
+This action uses [golangci-lint](https://github.com/golangci/golangci-lint) to check if code conforms with
+the rules that are specified in `.golangci.yml` file hosted in repository
 
+## Inputs
 
-This repository contains Github Actions used in CI/CD workflows of [HAProxy Technologies](https://www.haproxy.com/) repositories hosted in Github.
+None.
 
 ## Usage
 
-- Using action via Docker container image on Docker Hub:
-
 ```yaml
 steps:
   - name: Check out code
     uses: actions/checkout@v2
-  - name: action-name
-    uses: docker://haproxytech/action-name:TAG
+  - name: check-commit
+    uses: docker://haproxytech/linter:latest
 ```
 
-- Using action via HAProxyTech repository:
+## Development phase
 
-```yaml
-steps:
-  - name: Check out code
-    uses: actions/checkout@v2
-  - name: action-name
-    uses: haproxytech/github-actions/action-name@TAG
+action can be simulated locally with
+
+```bash
+golangci-lint run --enable-all
 ```
