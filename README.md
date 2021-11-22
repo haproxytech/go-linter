@@ -13,7 +13,7 @@ None.
 steps:
   - name: Check out code
     uses: actions/checkout@v2
-  - name: check-commit
+  - name: go-lint
     uses: docker://ghcr.io/haproxytech/go-linter:TAG
 ```
 
